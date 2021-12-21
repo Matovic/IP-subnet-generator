@@ -1,0 +1,313 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[{RowBox[{RowBox[{"(*",RowBox[{"Z\[AAcute]sobn\[IAcute]k"," ","pre"," ","dynamick\[EAcute]"," ","hodnoty"}],"*)"}],"\n",RowBox[
+{RowBox[{"zasobnik","=",RowBox[{"randomNum","[","]"}]}],";"}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"(*",RowBox[{"Z\[AAcute]sobn\[IAcute]k"," ","pre"," ","step"," ","by"," ","step"," ","solution"}],"*)"}],"\n",RowBox[
+{RowBox[{"zasobnikStep","=",RowBox[{"generateSteps","[","]"}]}],";"}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"(*",RowBox[{"Glob\[AAcute]lna"," ","premenn\[AAcute]"," ","pre"," ","step"," ","by"," ","step"," ","solution"}],"*)"}],"\n",RowBox[
+{RowBox[{"i","=","1"}],";"}]}],RowBox[{"\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{RowBox[
+{"Funckia"," ","pre"," ","priratanie"," ","\[DHacek]al\[SHacek]\[IAcute]ch"," ","adries"," ","k"," ","zoznamu"," ","adries"}],","," ",RowBox[
+{RowBox[{"napr","."," ","pridanie"}]," ","network"}],","," ",RowBox[{"broadcast"," ","addreass"," ","a"," ","default"," ","gateway"}]}],"*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"AddAddresses","[",RowBox[{"subnets_",","," ","number_"}],"]"}]," ",":="," ",RowBox[
+{"Map","[",RowBox[{RowBox[{"Function","[",RowBox[{"x",",",RowBox[{"x","+","number"}]}],"]"}],",","subnets"}],"]"}]}],";"}]}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{"Funckia"," ","pre"," ","n\[AAcute]jdenie"," ","najbli\[ZHacek]\[SHacek]ieho"," ","exponentu"}],"*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"NextPowerOfTwo","[","x_","]"}]," ",":="," ",RowBox[{"Ceiling","[",RowBox[
+{"RealExponent","[",RowBox[{"x",","," ","2"}],"]"}],"]"}]}],";"}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"(*",RowBox[{"Funkcia"," ","pre"," ","zistenie"," ","host"," ","\[CHacek]asti"," ","podsiete"," ","pre"," ","ka\[ZHacek]d\[UAcute]"," ","podsiet"}],"*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"FindHostPortion","[","subnets_","]"}]," ",":="," ",RowBox[{"Map","[",RowBox[
+{"NextPowerOfTwo",","," ","subnets"}],"]"}]}],";"}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"(*",RowBox[{RowBox[{"Funkcia"," ","pre"," ","najdenie"," ","masiek"," ","podsieti"," ","pre"," ","vsetky"," ","nase"," ","podsiete"}],","," ",RowBox[
+{"kazda"," ","maska"," ","sa"," ","urcuje"," ",RowBox[{"naslevodne",":"," ",RowBox[
+{RowBox[{"pocet"," ","bitov"," ","IPv4"," ","adresy",RowBox[{"(","32",")"}]}]," ","-"," ",RowBox[
+{"host"," ","portion"," ","podsiete"}]}]}]}]}],"*)"}],"\n",RowBox[{RowBox[{RowBox[
+{"FindSubnetMasks","[","hosts_","]"}]," ",":="," ",RowBox[{"Map","[",RowBox[{RowBox[
+{"Function","[",RowBox[{"x",",",RowBox[{"32","-","x"}]}],"]"}],","," ","hosts"}],"]"}]}],";"}]}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{"Funkcia"," ","pre"," ","naplnenie"," ","z\[AAcute]sobn\[IAcute]ka"}],"*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"createStack","[","]"}],":=",RowBox[{"zasobnik","=",RowBox[{"randomNum","[","]"}]}]}],";"}]}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{"Funkcia"," ","pre"," ","naplnenie"," ","step"," ","by"," ","step"," ","z\[AAcute]sobn\[IAcute]ka"}],"*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"createStepStack","[","]"}],":=",RowBox[{"zasobnikStep","=",RowBox[
+{"generateSteps","[","]"}]}]}],";"}]}],RowBox[{"\n","\n"}],RowBox[{RowBox[{"(*",RowBox[
+{"Funkcia"," ","pre"," ","vygenerovanie"," ","step"," ","by"," ","step"," ","rie\[SHacek]enia"}],"*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"generateSteps","[","]"}],":=",RowBox[{"Module","[",RowBox[{RowBox[
+{"{",RowBox[{"step1",",","step2",","," ","sortedSubnets",","," ","hosts",","," ","subnetMasks"}],"}"}],",",RowBox[
+{RowBox[{"sortedSubnets"," ","="," ",RowBox[{"Append","[",RowBox[{RowBox[{"AddAddresses","[",RowBox[
+{RowBox[{"ReverseSort","[",RowBox[{"zasobnik","[",RowBox[{"[","3","]"}],"]"}],"]"}],","," ","3"}],"]"}],","," ","4"}],"]"}]}],";",RowBox[
+{"hosts"," ","="," ",RowBox[{"FindHostPortion","[","sortedSubnets","]"}]}],";","\n",RowBox[
+{"subnetMasks"," ","="," ",RowBox[{"FindSubnetMasks","[","hosts","]"}]}],";",RowBox[
+{"step1","=","\"hello\""}],";",RowBox[{"step2","=","\"hi\""}],";",RowBox[{"{",RowBox[
+{"sortedSubnets",","," ","hosts",","," ","subnetMasks"}],"}"}]}]}],"]"}]}],";"}]}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{"Funkcia"," ","pre"," ","prejdenie"," ","na"," ","\[DHacek]al\[SHacek]\[IAcute]"," ","krok"}],"*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"nextStep","[","]"}],":="," ",RowBox[{"Which","[",RowBox[{RowBox[
+{RowBox[{"zasobnik","[",RowBox[{"[","13","]"}],"]"}],"<","2"}],",",RowBox[{RowBox[
+{"zasobnik","[",RowBox[{"[","13","]"}],"]"}],"++"}]}],"]"}]}],";"}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"(*",RowBox[{"Funkcia"," ","pre"," ","generovanie"," ","zadania"}],"*)"}],"\n",RowBox[
+{RowBox[{"randomNum","[","]"}],":=",RowBox[{"Module","[",RowBox[{RowBox[{"{",RowBox[
+{"ipPrint",",","mask",",","subnets",",","N1",",","N2",",","N3",",","N4",",","PC1",",","PC2",",","PC3",",","PC4",",","solution",",","step"}],"}"}],",",RowBox[
+{RowBox[{"ipPrint","=",RowBox[{RowBox[{"ToString","[",RowBox[{"RandomInteger","[",RowBox[
+{"{",RowBox[{"0",",","255"}],"}"}],"]"}],"]"}],".",RowBox[{"ToString","[",RowBox[
+{"RandomInteger","[",RowBox[{"{",RowBox[{"0",",","255"}],"}"}],"]"}],"]"}],".",RowBox[
+{"ToString","[",RowBox[{"RandomInteger","[",RowBox[{"{",RowBox[{"0",",","255"}],"}"}],"]"}],"]"}],".",RowBox[
+{"ToString","[",RowBox[{"RandomInteger","[",RowBox[{"{",RowBox[{"0",",","255"}],"}"}],"]"}],"]"}]}]}],";",RowBox[
+{"mask","=",RowBox[{"RandomInteger","[",RowBox[{"{",RowBox[{"16",",","30"}],"}"}],"]"}]}],";",RowBox[
+{"subnets","=",RowBox[{"List","[",RowBox[{RowBox[{"RandomInteger","[",RowBox[{"{",RowBox[
+{"5",",","20"}],"}"}],"]"}],",",RowBox[{"RandomInteger","[",RowBox[{"{",RowBox[{"50",",","100"}],"}"}],"]"}],",",RowBox[
+{"RandomInteger","[",RowBox[{"{",RowBox[{"1000",",","3000"}],"}"}],"]"}],",",RowBox[
+{"RandomInteger","[",RowBox[{"{",RowBox[{"3000",",","5000"}],"}"}],"]"}]}],"]"}]}],";",RowBox[
+{"N1","=",RowBox[{"RandomChoice","[","subnets","]"}]}],";",RowBox[{"subnets","=",RowBox[
+{"DeleteCases","[",RowBox[{"subnets",",","N1"}],"]"}]}],";",RowBox[{"N2","=",RowBox[
+{"RandomChoice","[","subnets","]"}]}],";",RowBox[{"subnets","=",RowBox[{"DeleteCases","[",RowBox[
+{"subnets",",","N2"}],"]"}]}],";",RowBox[{"N3","=",RowBox[{"RandomChoice","[","subnets","]"}]}],";",RowBox[
+{"subnets","=",RowBox[{"DeleteCases","[",RowBox[{"subnets",",","N3"}],"]"}]}],";",RowBox[
+{"N4","=",RowBox[{"RandomChoice","[","subnets","]"}]}],";",RowBox[{"subnets","=",RowBox[
+{"Sort","[",RowBox[{"List","[",RowBox[{"N1",",","N2",",","N3",",","N4"}],"]"}],"]"}]}],";",RowBox[
+{"PC1","=",RowBox[{"RandomInteger","[",RowBox[{"{",RowBox[{"1",",","5"}],"}"}],"]"}]}],";",RowBox[
+{"PC2","=",RowBox[{"RandomInteger","[",RowBox[{"{",RowBox[{"5",",","10"}],"}"}],"]"}]}],";",RowBox[
+{"PC3","=",RowBox[{"RandomInteger","[",RowBox[{"{",RowBox[{"100",",","255"}],"}"}],"]"}]}],";",RowBox[
+{"PC4","=",RowBox[{"RandomInteger","[",RowBox[{"{",RowBox[{"255",",","257"}],"}"}],"]"}]}],";",RowBox[
+{"solution","=","\"Solution is hidden\""}],";",RowBox[{"step","=","1"}],";",RowBox[
+{"{",RowBox[{"ipPrint",",","mask",",","subnets",",","N1",",","N2",",","N3",",","N4",",","PC1",",","PC2",",","PC3",",","PC4",",","solution",",","step"}],"}"}]}]}],"]"}]}]}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{"Funkcia"," ","pre"," ","odhalenie"," ","Step"," ","by"," ","Step"," ","rie\[SHacek]enia"}],"*)"}],"\n",RowBox[
+{"(*",RowBox[{RowBox[{"showSolution","[","]"}],":=",RowBox[{"(",RowBox[{RowBox[{"createStepStack","[","]"}],";",RowBox[
+{RowBox[{"zasobnik","[",RowBox[{"[","12","]"}],"]"}],"=",RowBox[{"Grid","[",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"Dynamic","[",RowBox[{"zasobnikStep","[",RowBox[
+{"[",RowBox[{"zasobnik","[",RowBox[{"[","13","]"}],"]"}],"]"}],"]"}],"]"}],"}"}],",","\n",RowBox[
+{"{",RowBox[{RowBox[{"Button","[",RowBox[{"\"Next step\"",",",RowBox[{"nextStep","[","]"}]}],"]"}],",",RowBox[
+{"Button","[",RowBox[{"\"Show everything\"",",",RowBox[{"showWholeSolution","[","]"}]}],"]"}]}],"}"}]}],"}"}],"]"}]}],";"}],")"}]}],"\n","*)"}],"\n","\n",RowBox[
+{RowBox[{"showSolution","[","]"}],":=",RowBox[{"(",RowBox[{RowBox[{"createStepStack","[","]"}],";",RowBox[
+{RowBox[{"zasobnik","[",RowBox[{"[","12","]"}],"]"}],"=",RowBox[{"Grid","[",RowBox[
+{RowBox[{"{","\n",RowBox[{RowBox[{"{",RowBox[{RowBox[{"Dynamic","[",RowBox[{"Text","[","\"Siet \\t\\t Potrebne adresy \\t Host Portion \\t\\t Rozsah \\t Maska\"","]"}],"]"}],",","\"\""}],"}"}],",","\n",RowBox[
+{"{",RowBox[{RowBox[{"Text","[",RowBox[{"Dynamic","[",RowBox[{RowBox[{"zasobnikStep","[",RowBox[
+{"[","1","]"}],"]"}],"[",RowBox[{"[","1","]"}],"]"}],"]"}],"]"}],",",RowBox[{"Text","[",RowBox[
+{"Dynamic","[",RowBox[{"zasobnikStep","[",RowBox[{"[","2","]"}],"]"}],"]"}],"]"}],",",RowBox[
+{RowBox[{"Text","[",RowBox[{"Dynamic","[",RowBox[{"zasobnikStep","[",RowBox[{"[","3","]"}],"]"}],"]"}],"]"}],"\"\""}]}],"}"}]}],"\n","}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"Spacings"," ","\[Rule]",RowBox[{"{",RowBox[{"2",",","2"}],"}"}]}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"Frame","\[Rule]","True"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"Alignment","\[Rule]","Left"}]}],"]"}]}]}],")"}]}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"(*",RowBox[{"Funkcia"," ","pre"," ","odhalenie"," ","cel\[EAcute]ho"," ","rie\[SHacek]enia"}],"*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"showWholeSolution","[","]"}],":="," ",RowBox[{RowBox[{"zasobnik","[",RowBox[
+{"[","12","]"}],"]"}],"=",RowBox[{"Grid","[",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[
+{"Dynamic","[","zasobnikStep","]"}],"}"}],",","\n",RowBox[{"{",RowBox[{RowBox[{"Button","[",RowBox[
+{"\"Next step\"",",",RowBox[{"nextStep","[","]"}]}],"]"}],",",RowBox[{"Button","[",RowBox[
+{"\"Show everything\"",",",RowBox[{"showWholeSolution","[","]"}]}],"]"}]}],"}"}]}],"}"}],"]"}]}]}],";"}]}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{"Funkcia"," ","pre"," ","skrytie"," ","rie\[SHacek]enia"}],"*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"hideSolution","[","]"}],":=",RowBox[{RowBox[{"zasobnik","[",RowBox[
+{"[","12","]"}],"]"}],"=","\"Solution is hidden\""}]}],";"}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"(*",RowBox[{"Nastavenie"," ","v\[YAcute]chodiskovej"," ","hodnoty"}],"*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"zasobnik","[",RowBox[{"[","12","]"}],"]"}],"=","\"Solution is hidden\""}],";"}]}],RowBox[
+{"\n","\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{"Definovanie"," ","pou\[ZHacek]\[IAcute]vate\:013esk\[EAcute]ho"," ","rozhrania"}],"*)"}],"\n",RowBox[
+{"Grid","[",RowBox[{RowBox[{"{","\n","        ",RowBox[{RowBox[{"{",RowBox[{RowBox[
+{"Item","[",RowBox[{"Text","[",RowBox[{"Style","[",RowBox[{"\"Logicky\:0301 na\:0301vrh siete v na\:0301stroji Packet Tracer\"",",",RowBox[
+{"FontSize","\[Rule]","18"}],","," ",RowBox[{"FontColor","\[Rule]","Red"}],",",RowBox[
+{"TextAlignment","\[Rule]","Left"}]}],"]"}],"]"}],"]"}],","," ","\"\""}],"}"}],","," ","\n","        ",RowBox[
+{"{",RowBox[{RowBox[{"Item","[",RowBox[{"Text","[",RowBox[{"Style","[",RowBox[{"\"Navrhnite adresovaciu sche\:0301mu siete podl\:030ca obra\:0301zka. Adresa siete: \"",",",RowBox[
+{"FontSize","\[Rule]","15"}]}],"]"}],"]"}],"]"}],",",RowBox[{"Grid","[",RowBox[{"{",RowBox[
+{"{",RowBox[{RowBox[{"Pane","[",RowBox[{"Dynamic","[",RowBox[{"zasobnik","[",RowBox[
+{"[","1","]"}],"]"}],"]"}],"]"}],",",RowBox[{"Text","[","\"/\"","]"}],",",RowBox[
+{"Text","[",RowBox[{"zasobnik","[",RowBox[{"[","2","]"}],"]"}],"]"}]}],"}"}],"}"}],"]"}]}],"}"}],",","\n","        ",RowBox[
+{"{",RowBox[{"Item","[",RowBox[{"Text","[","\"Vytvorte podsiete podl\:030ca VLSM tak, aby sa adresami plytvalo c\:030co najmenej ak podsiete obsahuju\:0301: \"","]"}],"]"}],"}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{RowBox[{"Item","[",RowBox[{"Text","[","\"Siet\:030c N1: \"","]"}],"]"}],",",RowBox[
+{"Pane","[",RowBox[{"Dynamic","[",RowBox[{"zasobnik","[",RowBox[{"[","4","]"}],"]"}],"]"}],"]"}]}],"   ","}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{RowBox[{"Item","[",RowBox[{"Text","[","\"Siet\:030c N2: \"","]"}],"]"}],",",RowBox[
+{"Pane","[",RowBox[{"Dynamic","[",RowBox[{"zasobnik","[",RowBox[{"[","5","]"}],"]"}],"]"}],"]"}]}],"}"}]," ",",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{RowBox[{"Item","[",RowBox[{"Text","[","\"Siet\:030c N3: \"","]"}],"]"}],",",RowBox[
+{"Pane","[",RowBox[{"Dynamic","[",RowBox[{"zasobnik","[",RowBox[{"[","6","]"}],"]"}],"]"}],"]"}]}],"}"}]," ",",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{RowBox[{"Item","[",RowBox[{"Text","[","\"Siet\:030c N4: \"","]"}],"]"}],",",RowBox[
+{"Pane","[",RowBox[{"Dynamic","[",RowBox[{"zasobnik","[",RowBox[{"[","7","]"}],"]"}],"]"}],"]"}]}],"}"}]," ",",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{"Item","[",RowBox[{"Text","[","\"Adresy se\:0301riovy\:0301ch rozhrani\:0301 su\:0301 vz\:030cdy prve\:0301 dve platne\:0301 adresy v danej podsieti. R1 ma\:0301 niz\:030cs\:030ciu IP adresu na se\:0301riovom rozhrani\:0301 ako R2. Adresy ethernetovy\:0301ch rozhrani\:0301 smerovac\:030cov su\:0301 vz\:030cdy prve\:0301 platne\:0301 v danej podsieti.\"","\n","]"}],"]"}],"}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{RowBox[{"Text","[","\"Adresa PC1 je\"","]"}],",",RowBox[{"Text","[",RowBox[
+{"Dynamic","[",RowBox[{"zasobnik","[",RowBox[{"[","8","]"}],"]"}],"]"}],"]"}],",",RowBox[
+{"Text","[","\"platna\:0301 adresa v danej podsieti.\"","]"}],",","\"\""}],"}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{RowBox[{"Text","[","\"Adresa PC2 je\"","]"}],",",RowBox[{"Text","[",RowBox[
+{"Dynamic","[",RowBox[{"zasobnik","[",RowBox[{"[","9","]"}],"]"}],"]"}],"]"}],",",RowBox[
+{"Text","[","\"platna\:0301 adresa v danej podsieti.\"","]"}],",","\"\""}],"}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{RowBox[{"Text","[","\"Adresa PC3 je\"","]"}],",",RowBox[{"Text","[",RowBox[
+{"Dynamic","[",RowBox[{"zasobnik","[",RowBox[{"[","10","]"}],"]"}],"]"}],"]"}],",",RowBox[
+{"Text","[","\"platna\:0301 adresa v danej podsieti.\"","]"}],",","\"\""}],"}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{RowBox[{"Text","[","\"Adresa PC4 je\"","]"}],",",RowBox[{"Text","[",RowBox[
+{"Dynamic","[",RowBox[{"zasobnik","[",RowBox[{"[","11","]"}],"]"}],"]"}],"]"}],",",RowBox[
+{"Text","[","\"platna\:0301 adresa v danej podsieti.\"","]"}],",","\"\""}],"}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{"Item","[",RowBox[{"Text","[","\"V na\:0301stroji Packet Tracer zostavte topolo\:0301giu siete podl\:030ca obra\:0301zka. Vs\:030cetky prepojenia, okrem prepojenia medzi smerovac\:030cmi, su\:0301 ethernet. Medzi smerovac\:030cmi je se\:0301riove\:0301 prepojenie. Nakonfigurujte poz\:030cadovanu\:0301 adresovaciu sche\:0301mu a staticke\:0301 smerovanie tak, aby bola umoz\:030cnena\:0301 komunika\:0301cia vs\:030cetky\:0301ch koncovy\:0301ch uzlov. \"","]"}],"]"}],"}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{RowBox[{"Item","[",RowBox[{"Button","[",RowBox[{"\"Generate\"",",",RowBox[
+{"createStack","[","]"}]}],"]"}],"]"}],",",RowBox[{"Item","[",RowBox[{"Button","[",RowBox[
+{"\"Show Solution\"",",",RowBox[{"showSolution","[","]"}]}],"]"}],"]"}],",",RowBox[
+{"Item","[",RowBox[{"Button","[",RowBox[{"\"Hide Solution\"",",",RowBox[{"hideSolution","[","]"}]}],"]"}],"]"}]}],"}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"{",RowBox[{"Pane","[",RowBox[{"Dynamic","[",RowBox[{"zasobnik","[",RowBox[{"[","12","]"}],"]"}],"]"}],"]"}],"}"}]}],"\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]","}"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"Spacings"," ","\[Rule]",RowBox[{"{",RowBox[{"2",",","2"}],"}"}]}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"Frame","\[Rule]","True"}],",","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{"Alignment","\[Rule]","Left"}]}],"]"}]}],"\n",RowBox[{"\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]","\n",RowBox[
+{"(*",RowBox[{"Pr\[IAcute]prava"," ","hodn\[OHat]t"," ","pre"," ","generovanie"," ","rie\[SHacek]enia"}],"*)"}],"\n",RowBox[
+{RowBox[{"ip","=",RowBox[{"IPAddress","[",RowBox[{"zasobnik","[",RowBox[{"[","1","]"}],"]"}],"]"}]}],";"}]}],RowBox[
+{"\n","\n","\n"}],RowBox[{RowBox[{RowBox[{"zasobnik","[",RowBox[{"[","1","]"}],"]"}],"[",RowBox[
+{"[","2","]"}],"]"}],";"}],RowBox[{"\n","\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{"Z\[AAcute]sobn\[IAcute]k"," ","pre"," ","masky"}],"*)"}],"\n",RowBox[
+{RowBox[{"maskStack","="," ",RowBox[{"List"," ","[",RowBox[{"\"255.255.0.0\"",",","\"255.255.128.0\"",",","\"255.255.192.0\"",",","\"255.255.224.0\"",",","\"255.255.240.0\"",",","\"255.255.248.0\"",",","\"255.255.252.0\"",",","\"255.255.254.0\"",",","\"255.255.255.0\"",",","\"255.255.255.128\"",",","\"255.255.255.192\"",",","\"255.255.255.224\"",",","\"255.255.255.240\"",",","\"255.255.255.248\"",",","\"255.255.255.252\""}],"]"}]}],";"}]}],RowBox[
+{"\n","\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{"Takto"," ","n\[AAcute]jdeme"," ","current"," ","masku"}],"*)"}],"\n",RowBox[
+{RowBox[{"maskStack","[",RowBox[{"[",RowBox[{RowBox[{"zasobnik","[",RowBox[{"[","2","]"}],"]"}],"-","15"}],"]"}],"]"}],";"}]}],RowBox[
+{"\n","\n","\n","\n"}],RowBox[{"sortedSubnets"," ","="," ",RowBox[{"Append","[",RowBox[
+{RowBox[{"AddAddresses","[",RowBox[{RowBox[{"ReverseSort","[",RowBox[{"zasobnik","[",RowBox[
+{"[","3","]"}],"]"}],"]"}],","," ","3"}],"]"}],","," ","4"}],"]"}]}],"\n",RowBox[
+{"Print","[","sortedSubnets","]"}],"\n",RowBox[{RowBox[{"(*",RowBox[{"Najdenie"," ","host"," ","portion"," ","siete"}],"*)"}],"\n",RowBox[
+{"hosts"," ","="," ",RowBox[{"FindHostPortion","[","sortedSubnets","]"}]}]}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"(*",RowBox[{"Z"," ","host"," ","portion"," ","urcime"," ","masky"}],"*)"}],"\n",RowBox[
+{"subnetMasks"," ","="," ",RowBox[{"FindSubnetMasks","[","hosts","]"}]}]}],"\n",RowBox[
+{"print","[","sortedSubnets","]"}],"\n",RowBox[{"print","[","hosts","]"}],"\n",RowBox[
+{"print","[","subnetMasks","]"}],RowBox[{"\n","\n"}],RowBox[{RowBox[{"(*",RowBox[
+{"IPv4"," ","adresy"}],"*)"}],"\n",RowBox[{RowBox[{"ipv4Address","=",RowBox[{"zasobnik","[",RowBox[
+{"[","1","]"}],"]"}]}],";"}]}],"\n","ipv4Address",RowBox[{"\n","\n"}],RowBox[{RowBox[
+{RowBox[{"zasobnik","[",RowBox[{"[","3","]"}],"]"}],"[",RowBox[{"[","2","]"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{RowBox[{RowBox[{"ResourceFunction","[","\"HexConvert\"","]"}],"[","255","]"}],";"}],"\n"}]}],
+"Input",ExpressionUUID -> "96436c38-064c-4523-8164-16ce81f6579e"],Cell[
+BoxData[TagBox[
+GridBox[{{ItemBox[InterpretationBox[Cell[
+BoxData[FormBox[StyleBox["\"Logicky\:0301 na\:0301vrh siete v na\:0301stroji Packet Tracer\"",
+FontSize -> 18,FontColor -> RGBColor[1,0,0],TextAlignment -> Left,StripOnInput -> False],
+TextForm]],"InlineText",ExpressionUUID -> "1aaaa34c-32dc-4606-8a4c-454ae0d05d96"],
+Text[Style["Logicky\:0301 na\:0301vrh siete v na\:0301stroji Packet Tracer",FontSize -> 18,
+FontColor -> RGBColor[1,0,0],TextAlignment -> Left]]],StripOnInput -> False],"\"\"","",""},{ItemBox[
+InterpretationBox[Cell[
+BoxData[FormBox[StyleBox["\"Navrhnite adresovaciu sche\:0301mu siete podl\:030ca obra\:0301zka. Adresa siete: \"",
+FontSize -> 15,StripOnInput -> False],TextForm]],"InlineText",ExpressionUUID -> "9ef487e9-7837-4ffc-9c43-5efcdd9a7c50"],
+Text[Style["Navrhnite adresovaciu sche\:0301mu siete podl\:030ca obra\:0301zka. Adresa siete: ",
+FontSize -> 15]]],StripOnInput -> False],TagBox[GridBox[{{PaneBox[DynamicBox[ToBoxes[
+Part[zasobnik,1],StandardForm]]],InterpretationBox[Cell[
+BoxData[FormBox["\"/\"",
+TextForm]],"InlineText",ExpressionUUID -> "79591532-5bc6-40fe-8385-d6e46221cb3b"],
+Text["/"]],InterpretationBox[Cell[
+BoxData[FormBox["23",TextForm]],"InlineText",ExpressionUUID -> "47bfd46c-7c77-452b-bd03-c8148f44c191"],
+Text[23]]}},AutoDelete -> False,GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}}],
+"Grid"],"",""},{ItemBox[InterpretationBox[Cell[
+BoxData[FormBox["\"Vytvorte podsiete podl\:030ca VLSM tak, aby sa adresami plytvalo c\:030co najmenej ak podsiete obsahuju\:0301: \"",
+TextForm]],"InlineText",ExpressionUUID -> "158289ff-b925-4d8c-ba32-ec198626afab"],
+Text["Vytvorte podsiete podl\:030ca VLSM tak, aby sa adresami plytvalo c\:030co najmenej ak podsiete obsahuju\:0301: "]],
+StripOnInput -> False],"","",""},{ItemBox[InterpretationBox[Cell[
+BoxData[FormBox[
+"\"Siet\:030c N1: \"",TextForm]],"InlineText",ExpressionUUID -> "9b9ccf14-38b6-4b1d-99ae-ebeb46ae819a"],
+Text["Siet\:030c N1: "]],StripOnInput -> False],PaneBox[DynamicBox[ToBoxes[Part[zasobnik,
+4],StandardForm]]],"",""},{ItemBox[InterpretationBox[Cell[
+BoxData[FormBox["\"Siet\:030c N2: \"",
+TextForm]],"InlineText",ExpressionUUID -> "b2a88434-2f2f-4f61-aa74-124dd991ed1f"],
+Text["Siet\:030c N2: "]],StripOnInput -> False],PaneBox[DynamicBox[ToBoxes[Part[zasobnik,
+5],StandardForm]]],"",""},{ItemBox[InterpretationBox[Cell[
+BoxData[FormBox["\"Siet\:030c N3: \"",
+TextForm]],"InlineText",ExpressionUUID -> "e0984c8d-7f25-4f32-98b3-fe576363dd22"],
+Text["Siet\:030c N3: "]],StripOnInput -> False],PaneBox[DynamicBox[ToBoxes[Part[zasobnik,
+6],StandardForm]]],"",""},{ItemBox[InterpretationBox[Cell[
+BoxData[FormBox["\"Siet\:030c N4: \"",
+TextForm]],"InlineText",ExpressionUUID -> "9b0e4c4f-173c-48d4-ac8d-173d0fe8d28f"],
+Text["Siet\:030c N4: "]],StripOnInput -> False],PaneBox[DynamicBox[ToBoxes[Part[zasobnik,
+7],StandardForm]]],"",""},{ItemBox[InterpretationBox[Cell[
+BoxData[FormBox["\"Adresy se\:0301riovy\:0301ch rozhrani\:0301 su\:0301 vz\:030cdy prve\:0301 dve platne\:0301 adresy v danej podsieti. R1 ma\:0301 niz\:030cs\:030ciu IP adresu na se\:0301riovom rozhrani\:0301 ako R2. Adresy ethernetovy\:0301ch rozhrani\:0301 smerovac\:030cov su\:0301 vz\:030cdy prve\:0301 platne\:0301 v danej podsieti.\"",
+TextForm]],"InlineText",ExpressionUUID -> "8b0ac49d-c3c0-4847-9cfa-7fd15e94c8e9"],
+Text["Adresy se\:0301riovy\:0301ch rozhrani\:0301 su\:0301 vz\:030cdy prve\:0301 dve platne\:0301 adresy v danej podsieti. R1 ma\:0301 niz\:030cs\:030ciu IP adresu na se\:0301riovom rozhrani\:0301 ako R2. Adresy ethernetovy\:0301ch rozhrani\:0301 smerovac\:030cov su\:0301 vz\:030cdy prve\:0301 platne\:0301 v danej podsieti."]],
+StripOnInput -> False],"","",""},{InterpretationBox[Cell[
+BoxData[FormBox["\"Adresa PC1 je\"",
+TextForm]],"InlineText",ExpressionUUID -> "c84fa488-a9a5-49e3-8f66-45f4bb592466"],
+Text["Adresa PC1 je"]],InterpretationBox[Cell[
+BoxData[FormBox[DynamicBox[ToBoxes[
+Part[zasobnik,8],StandardForm]],TextForm]],"InlineText",ExpressionUUID -> "2d306612-9510-4f37-9fb6-db3471ffebab"],
+Text[Dynamic[Part[zasobnik,8]]]],InterpretationBox[Cell[
+BoxData[FormBox["\"platna\:0301 adresa v danej podsieti.\"",
+TextForm]],"InlineText",ExpressionUUID -> "a6575d9a-7529-43a0-aab3-a6610c689e51"],
+Text["platna\:0301 adresa v danej podsieti."]],"\"\""},{InterpretationBox[Cell[
+BoxData[
+FormBox["\"Adresa PC2 je\"",TextForm]],"InlineText",ExpressionUUID -> "ed97957a-2e25-4660-a7a8-66d216d2f928"],
+Text["Adresa PC2 je"]],InterpretationBox[Cell[
+BoxData[FormBox[DynamicBox[ToBoxes[
+Part[zasobnik,9],StandardForm]],TextForm]],"InlineText",ExpressionUUID -> "54fbef6b-ec9f-4c89-9e49-b898c995ece3"],
+Text[Dynamic[Part[zasobnik,9]]]],InterpretationBox[Cell[
+BoxData[FormBox["\"platna\:0301 adresa v danej podsieti.\"",
+TextForm]],"InlineText",ExpressionUUID -> "6f69261a-28ca-4167-b5a6-c514cf369a88"],
+Text["platna\:0301 adresa v danej podsieti."]],"\"\""},{InterpretationBox[Cell[
+BoxData[
+FormBox["\"Adresa PC3 je\"",TextForm]],"InlineText",ExpressionUUID -> "161ec8bf-ca31-4c17-a9b9-965daceef206"],
+Text["Adresa PC3 je"]],InterpretationBox[Cell[
+BoxData[FormBox[DynamicBox[ToBoxes[
+Part[zasobnik,10],StandardForm]],TextForm]],"InlineText",ExpressionUUID -> "c552bb7e-0336-47ef-bb25-88a98eb16157"],
+Text[Dynamic[Part[zasobnik,10]]]],InterpretationBox[Cell[
+BoxData[FormBox["\"platna\:0301 adresa v danej podsieti.\"",
+TextForm]],"InlineText",ExpressionUUID -> "c1509a4a-c328-4ee9-9a1e-3f2e83458af4"],
+Text["platna\:0301 adresa v danej podsieti."]],"\"\""},{InterpretationBox[Cell[
+BoxData[
+FormBox["\"Adresa PC4 je\"",TextForm]],"InlineText",ExpressionUUID -> "73e89f66-dc3f-40e0-ba19-92eaae3a310d"],
+Text["Adresa PC4 je"]],InterpretationBox[Cell[
+BoxData[FormBox[DynamicBox[ToBoxes[
+Part[zasobnik,11],StandardForm]],TextForm]],"InlineText",ExpressionUUID -> "671f7e8b-fc37-4003-955d-be07e5d5b49f"],
+Text[Dynamic[Part[zasobnik,11]]]],InterpretationBox[Cell[
+BoxData[FormBox["\"platna\:0301 adresa v danej podsieti.\"",
+TextForm]],"InlineText",ExpressionUUID -> "3aa1bfe1-30b7-4028-9e03-a7a38e665329"],
+Text["platna\:0301 adresa v danej podsieti."]],"\"\""},{ItemBox[InterpretationBox[
+Cell[
+BoxData[FormBox["\"V na\:0301stroji Packet Tracer zostavte topolo\:0301giu siete podl\:030ca obra\:0301zka. Vs\:030cetky prepojenia, okrem prepojenia medzi smerovac\:030cmi, su\:0301 ethernet. Medzi smerovac\:030cmi je se\:0301riove\:0301 prepojenie. Nakonfigurujte poz\:030cadovanu\:0301 adresovaciu sche\:0301mu a staticke\:0301 smerovanie tak, aby bola umoz\:030cnena\:0301 komunika\:0301cia vs\:030cetky\:0301ch koncovy\:0301ch uzlov. \"",
+TextForm]],"InlineText",ExpressionUUID -> "397af098-15aa-43cb-8ec2-53106b1317be"],
+Text["V na\:0301stroji Packet Tracer zostavte topolo\:0301giu siete podl\:030ca obra\:0301zka. Vs\:030cetky prepojenia, okrem prepojenia medzi smerovac\:030cmi, su\:0301 ethernet. Medzi smerovac\:030cmi je se\:0301riove\:0301 prepojenie. Nakonfigurujte poz\:030cadovanu\:0301 adresovaciu sche\:0301mu a staticke\:0301 smerovanie tak, aby bola umoz\:030cnena\:0301 komunika\:0301cia vs\:030cetky\:0301ch koncovy\:0301ch uzlov. "]],
+StripOnInput -> False],"","",""},{ItemBox[ButtonBox["\"Generate\"",RuleDelayed[ButtonFunction,
+createStack[]],Appearance -> Automatic,Evaluator -> Automatic,Method -> "Preemptive"],
+StripOnInput -> False],ItemBox[ButtonBox["\"Show Solution\"",RuleDelayed[ButtonFunction,
+showSolution[]],Appearance -> Automatic,Evaluator -> Automatic,Method -> "Preemptive"],
+StripOnInput -> False],ItemBox[ButtonBox["\"Hide Solution\"",RuleDelayed[ButtonFunction,
+hideSolution[]],Appearance -> Automatic,Evaluator -> Automatic,Method -> "Preemptive"],
+StripOnInput -> False],""},{PaneBox[DynamicBox[ToBoxes[Part[zasobnik,12],StandardForm]]],"","",""}},
+GridBoxAlignment -> {"Columns" -> {{Left}}},AutoDelete -> False,GridBoxFrame -> {"ColumnsIndexed" -> {{{1,-1},{1,-1}} -> True}},
+GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}},GridBoxSpacings -> {"Columns" -> {{2}},"Rows" -> {{2}}}],
+"Grid"],StandardForm],"Output",CellLabel -> "Out[755]= ",ExpressionUUID -> "1d827429-f55a-429a-a94a-e43cde575b1f"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"3426",",","1060",",","84",",","10",",","4"}],"}"}],StandardForm],
+"Output",CellLabel -> "Out[760]= ",ExpressionUUID -> "d850ee31-1cc6-4563-bf96-7c400c852591"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"3426",",","1060",",","84",",","10",",","4"}],"}"}],StandardForm],
+"Print",ExpressionUUID -> "112cceec-ee56-4adb-903c-1bc4fa1b8843"],Cell[
+BoxData[RowBox[
+{"{",RowBox[{"12",",","11",",","7",",","4",",","2"}],"}"}],StandardForm],"Output",
+CellLabel -> "Out[762]= ",ExpressionUUID -> "a39053ee-aefc-481b-a1e3-02aab03ff707"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"20",",","21",",","25",",","28",",","30"}],"}"}],StandardForm],
+"Output",CellLabel -> "Out[763]= ",ExpressionUUID -> "bed51bcd-a70c-416c-9a86-66ce1789781e"],Cell[
+BoxData[
+RowBox[{"print","[",RowBox[{"{",RowBox[{"3426",",","1060",",","84",",","10",",","4"}],"}"}],"]"}],
+StandardForm],"Output",CellLabel -> "Out[764]= ",ExpressionUUID -> "9553591a-4d60-4d01-a7cb-6aba6bd9b7b1"],Cell[
+BoxData[
+RowBox[{"print","[",RowBox[{"{",RowBox[{"12",",","11",",","7",",","4",",","2"}],"}"}],"]"}],
+StandardForm],"Output",CellLabel -> "Out[765]= ",ExpressionUUID -> "292a6ace-31a7-4eb6-b065-f6ba91ce032c"],Cell[
+BoxData[
+RowBox[{"print","[",RowBox[{"{",RowBox[{"20",",","21",",","25",",","28",",","30"}],"}"}],"]"}],
+StandardForm],"Output",CellLabel -> "Out[766]= ",ExpressionUUID -> "be9de78e-b28b-44eb-83f5-bf631059bf09"],Cell[
+BoxData[
+RowBox[{"\"126\"",".","\"92\"",".","\"106\"",".","\"200\""}],StandardForm],"Output",
+CellLabel -> "Out[768]= ",ExpressionUUID -> "3d0e4f3c-774a-4cdd-9c4f-2c92f860136f"],Cell[
+BoxData[
+TemplateBox[{"Part","partd","\"Part specification \\!\\(\\*TagBox[RowBox[{\\\"zasobnik\\\", \\\"\[LeftDoubleBracket]\\\", \\\"3\\\", \\\"\[RightDoubleBracket]\\\"}], Short[#1, 5] & ]\\) is longer than depth of object.\"",2,771,20,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "75d8a891-5b1d-4469-985c-66bff49c9604"],Cell[
+BoxData[
+TemplateBox[{"Part","partw","\"Part \\!\\(\\*TagBox[\\\"6\\\", Short[#1, 5] & ]\\) of \\!\\(\\*TagBox[RowBox[{\\\"3\\\", \\\"+\\\", \\\"zasobnik\\\"}], Short[#1, 5] & ]\\) does not exist.\"",2,771,21,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "2b41f3d6-2f93-4322-8c4c-9830875c7c68"],Cell[
+BoxData[
+TemplateBox[{"Part","partw","\"Part \\!\\(\\*TagBox[\\\"6\\\", Short[#1, 5] & ]\\) of \\!\\(\\*TagBox[RowBox[{\\\"3\\\", \\\"+\\\", \\\"zasobnik\\\"}], Short[#1, 5] & ]\\) does not exist.\"",2,771,22,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "3bb8cf2f-081e-4fce-8233-4ffb6af22b3d"],Cell[
+BoxData[
+TemplateBox[{"Part","partw","\"Part \\!\\(\\*TagBox[\\\"3\\\", Short[#1, 5] & ]\\) of \\!\\(\\*TagBox[RowBox[{\\\"Ceiling\\\", \\\"[\\\", RowBox[{\\\"RealExponent\\\", \\\"[\\\", RowBox[{RowBox[{\\\"3\\\", \\\"+\\\", \\\"zasobnik\\\"}], \\\",\\\", \\\"2\\\"}], \\\"]\\\"}], \\\"]\\\"}], Short[#1, 5] & ]\\) does not exist.\"",2,771,23,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "82ca03f6-b141-4bc2-854a-058b4dabafb5"],Cell[
+BoxData[
+TemplateBox[{"General","stop","\"Further output of \\!\\(\\*TagBox[StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \\\"partw\\\"}], \\\"MessageName\\\"], Short[#1, 5] & ]\\) will be suppressed during this calculation.\"",2,771,24,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "f2c2d067-8870-406c-8c69-1930cd943fd2"],Cell[
+BoxData[
+TemplateBox[{"Set","noval","\"Symbol \\!\\(\\*TagBox[\\\"zasobnik\\\", Short[#1, 5] & ]\\) in part assignment does not have an immediate value.\"",2,771,25,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "1867e8f2-7aa0-481f-ab2c-bc8e7f908cbc"],Cell[
+BoxData[
+TemplateBox[{"Part","partw","\"Part \\!\\(\\*TagBox[\\\"6\\\", Short[#1, 5] & ]\\) of \\!\\(\\*TagBox[RowBox[{\\\"3\\\", \\\"+\\\", \\\"zasobnik\\\"}], Short[#1, 5] & ]\\) does not exist.\"",2,771,26,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "e70768d6-4073-48d7-b733-57bcd81eb040"],Cell[
+BoxData[
+TemplateBox[{"Part","partw","\"Part \\!\\(\\*TagBox[\\\"6\\\", Short[#1, 5] & ]\\) of \\!\\(\\*TagBox[RowBox[{\\\"3\\\", \\\"+\\\", \\\"zasobnik\\\"}], Short[#1, 5] & ]\\) does not exist.\"",2,771,27,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "fc7d832d-ea40-493d-98da-4840035dcca5"],Cell[
+BoxData[
+TemplateBox[{"Part","partw","\"Part \\!\\(\\*TagBox[\\\"3\\\", Short[#1, 5] & ]\\) of \\!\\(\\*TagBox[RowBox[{\\\"Ceiling\\\", \\\"[\\\", RowBox[{\\\"RealExponent\\\", \\\"[\\\", RowBox[{RowBox[{\\\"3\\\", \\\"+\\\", \\\"zasobnik\\\"}], \\\",\\\", \\\"2\\\"}], \\\"]\\\"}], \\\"]\\\"}], Short[#1, 5] & ]\\) does not exist.\"",2,771,28,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "05f9ceb3-9c7b-4626-b2bc-583924974025"],Cell[
+BoxData[
+TemplateBox[{"General","stop","\"Further output of \\!\\(\\*TagBox[StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \\\"partw\\\"}], \\\"MessageName\\\"], Short[#1, 5] & ]\\) will be suppressed during this calculation.\"",2,771,29,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "13533f41-21f7-4734-b356-1cbf902cb9c4"],Cell[
+BoxData[
+TemplateBox[{"Set","noval","\"Symbol \\!\\(\\*TagBox[\\\"zasobnik\\\", Short[#1, 5] & ]\\) in part assignment does not have an immediate value.\"",2,771,30,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "97aa065c-8c9e-4881-9e80-01c97957859a"],Cell[
+BoxData[
+TemplateBox[{"Set","noval","\"Symbol \\!\\(\\*TagBox[\\\"zasobnik\\\", Short[#1, 5] & ]\\) in part assignment does not have an immediate value.\"",2,771,31,19480310993374906003,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "3c94fc4b-35e6-4020-99f9-1bb23cbc523f"]},
+Open],ExpressionUUID -> "13b80300-a277-433e-a56d-d28d4a27b5c1"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "13. for Wolfram Cloud 1.61.2 (November 30, 2021)"]
