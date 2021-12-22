@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     72565,       1675]
-NotebookOptionsPosition[     72030,       1657]
-NotebookOutlinePosition[     72473,       1674]
-CellTagsIndexPosition[     72430,       1671]
+NotebookDataLength[     72867,       1682]
+NotebookOptionsPosition[     72335,       1664]
+NotebookOutlinePosition[     72775,       1681]
+CellTagsIndexPosition[     72732,       1678]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -122,7 +122,7 @@ Cell[BoxData[
        RowBox[{"PC1", "=", 
         RowBox[{"RandomInteger", "[", 
          RowBox[{"{", 
-          RowBox[{"1", ",", "5"}], "}"}], "]"}]}], ";", 
+          RowBox[{"2", ",", "5"}], "}"}], "]"}]}], ";", 
        RowBox[{"PC2", "=", 
         RowBox[{"RandomInteger", "[", 
          RowBox[{"{", 
@@ -468,8 +468,8 @@ Cell[BoxData[
            RowBox[{"ipRange3", "[", 
             RowBox[{"[", "2", "]"}], "]"}], ".", 
            RowBox[{"ipRange3", "[", 
-            RowBox[{"[", "3", "]"}], "]"}], ".", "ipv4Address3"}], " ", 
-          "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"[", "3", "]"}], "]"}], ".", "ipv4Add3"}], " ", "]"}]}], 
+        ";", "\[IndentingNewLine]", 
         RowBox[{"{", 
          RowBox[{"s0", ",", " ", "g0", ",", " ", "g1"}], "}"}]}]}], "]"}]}], 
     ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -817,12 +817,12 @@ Cell[BoxData[
                  RowBox[{"zasobnikStep", "[", 
                   RowBox[{"[", "4", "]"}], "]"}], "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}], ",", 
-             RowBox[{"Text", "[", 
-              RowBox[{"Dynamic", "[", 
+             RowBox[{"\"\</\>\"", "<>", 
+              RowBox[{"ToString", "[", 
                RowBox[{
                 RowBox[{"zasobnikStep", "[", 
                  RowBox[{"[", "3", "]"}], "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}], "}"}], ",", 
+                RowBox[{"[", "1", "]"}], "]"}], "]"}]}]}], "}"}], ",", 
            "\[IndentingNewLine]", " ", 
            RowBox[{"{", 
             RowBox[{
@@ -867,12 +867,12 @@ Cell[BoxData[
                  RowBox[{"zasobnikStep", "[", 
                   RowBox[{"[", "5", "]"}], "]"}], "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}], ",", 
-             RowBox[{"Text", "[", 
-              RowBox[{"Dynamic", "[", 
+             RowBox[{"\"\</\>\"", "<>", 
+              RowBox[{"ToString", "[", 
                RowBox[{
                 RowBox[{"zasobnikStep", "[", 
                  RowBox[{"[", "3", "]"}], "]"}], "[", 
-                RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], "}"}], ",", 
+                RowBox[{"[", "2", "]"}], "]"}], "]"}]}]}], "}"}], ",", 
            "\[IndentingNewLine]", 
            RowBox[{"{", 
             RowBox[{
@@ -917,12 +917,12 @@ Cell[BoxData[
                  RowBox[{"zasobnikStep", "[", 
                   RowBox[{"[", "6", "]"}], "]"}], "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}], ",", 
-             RowBox[{"Text", "[", 
-              RowBox[{"Dynamic", "[", 
+             RowBox[{"\"\</\>\"", "<>", 
+              RowBox[{"ToString", "[", 
                RowBox[{
                 RowBox[{"zasobnikStep", "[", 
                  RowBox[{"[", "3", "]"}], "]"}], "[", 
-                RowBox[{"[", "3", "]"}], "]"}], "]"}], "]"}]}], "}"}], ",", 
+                RowBox[{"[", "3", "]"}], "]"}], "]"}]}]}], "}"}], ",", 
            "\[IndentingNewLine]", 
            RowBox[{"{", 
             RowBox[{
@@ -967,12 +967,12 @@ Cell[BoxData[
                  RowBox[{"zasobnikStep", "[", 
                   RowBox[{"[", "7", "]"}], "]"}], "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}], ",", 
-             RowBox[{"Text", "[", 
-              RowBox[{"Dynamic", "[", 
+             RowBox[{"\"\</\>\"", "<>", 
+              RowBox[{"ToString", "[", 
                RowBox[{
                 RowBox[{"zasobnikStep", "[", 
                  RowBox[{"[", "3", "]"}], "]"}], "[", 
-                RowBox[{"[", "4", "]"}], "]"}], "]"}], "]"}]}], "}"}], ",", 
+                RowBox[{"[", "4", "]"}], "]"}], "]"}]}]}], "}"}], ",", 
            "\[IndentingNewLine]", 
            RowBox[{"{", 
             RowBox[{"\"\<N5\>\"", ",", 
@@ -1000,12 +1000,12 @@ Cell[BoxData[
                  RowBox[{"zasobnikStep", "[", 
                   RowBox[{"[", "8", "]"}], "]"}], "[", 
                  RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}], ",", 
-             RowBox[{"Text", "[", 
-              RowBox[{"Dynamic", "[", 
+             RowBox[{"\"\</\>\"", "<>", 
+              RowBox[{"ToString", "[", 
                RowBox[{
                 RowBox[{"zasobnikStep", "[", 
                  RowBox[{"[", "3", "]"}], "]"}], "[", 
-                RowBox[{"[", "5", "]"}], "]"}], "]"}], "]"}]}], "}"}], ",", 
+                RowBox[{"[", "5", "]"}], "]"}], "]"}]}]}], "}"}], ",", 
            "\[IndentingNewLine]", 
            RowBox[{"{", 
             RowBox[{
@@ -1398,8 +1398,10 @@ komunika\:0301cia vs\:030cetky\:0301ch koncovy\:0301ch uzlov. \>\"", "]"}],
    3.849182224169664*^9, 3.849182288309058*^9}, {3.8491823576007957`*^9, 
    3.84918236651129*^9}, {3.849182536654805*^9, 3.849182546829096*^9}, {
    3.849182930347302*^9, 3.849183006920561*^9}, {3.849183197795453*^9, 
-   3.84918320348098*^9}, {3.849183457883334*^9, 3.849183526744186*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"13b80300-a277-433e-a56d-d28d4a27b5c1"],
+   3.84918320348098*^9}, {3.849183457883334*^9, 3.849183526744186*^9}, 
+   3.849188566564221*^9, 3.849188780699362*^9, {3.8491888260613537`*^9, 
+   3.849188917486435*^9}},
+ CellLabel->"In[96]:=",ExpressionUUID->"13b80300-a277-433e-a56d-d28d4a27b5c1"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -1413,7 +1415,7 @@ Packet Tracer\"\>",
           TextAlignment->Left,
           FontSize->18,
           FontColor->RGBColor[1, 0, 0]], TextForm]], "InlineText",
-        ExpressionUUID->"faab0d03-a951-4929-9e77-e992eaa114f6"],
+        ExpressionUUID->"c2f4b935-dcdc-415f-a8de-eb67febfacdc"],
        Text[
         Style[
         "Logicky\:0301 na\:0301vrh siete v na\:0301stroji Packet Tracer", 
@@ -1428,7 +1430,7 @@ Packet Tracer\"\>",
 obra\:0301zka. Adresa siete: \"\>",
           StripOnInput->False,
           FontSize->15], TextForm]], "InlineText",ExpressionUUID->
-        "500c88a6-9479-4113-a812-8c24ab7e25e7"],
+        "0780b21e-7cda-43dd-b693-20181215e30a"],
        Text[
         Style[
         "Navrhnite adresovaciu sche\:0301mu siete podl\:030ca obra\:0301zka. \
@@ -1439,15 +1441,15 @@ Adresa siete: ", FontSize -> 15]]],
          PaneBox[
           DynamicBox[ToBoxes[
             Part[$CellContext`zasobnik, 1], StandardForm],
-           ImageSizeCache->{86., {1., 9.}}]], 
+           ImageSizeCache->{79., {1., 9.}}]], 
          InterpretationBox[Cell[BoxData[
            FormBox["\<\"/\"\>", TextForm]], "InlineText",ExpressionUUID->
-           "9c433bb5-a37e-420e-90ab-b8d0c9bbd0b5"],
+           "71f614c5-7497-4915-8bcb-4731a51f5d52"],
           Text["/"]], 
          InterpretationBox[Cell[BoxData[
-           FormBox["11", TextForm]], "InlineText",ExpressionUUID->
-           "6573483e-84fa-4e90-bc24-196efd7535ba"],
-          Text[11]]}
+           FormBox["12", TextForm]], "InlineText",ExpressionUUID->
+           "50d569d1-7b91-413d-b1f0-1bd667dc6876"],
+          Text[12]]}
        },
        AutoDelete->False,
        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
@@ -1457,7 +1459,7 @@ Adresa siete: ", FontSize -> 15]]],
       InterpretationBox[Cell[BoxData[
         FormBox["\<\"Vytvorte podsiete podl\:030ca VLSM tak, aby sa adresami \
 plytvalo c\:030co najmenej ak podsiete obsahuju\:0301: \"\>", TextForm]], 
-        "InlineText",ExpressionUUID->"d1a34785-74fd-4c4c-995b-f1adc87894c4"],
+        "InlineText",ExpressionUUID->"96b4b789-0371-4e9d-a492-edb345c18184"],
        Text[
        "Vytvorte podsiete podl\:030ca VLSM tak, aby sa adresami plytvalo c\
 \:030co najmenej ak podsiete obsahuju\:0301: "]],
@@ -1466,18 +1468,18 @@ plytvalo c\:030co najmenej ak podsiete obsahuju\:0301: \"\>", TextForm]],
      ItemBox[
       InterpretationBox[Cell[BoxData[
         FormBox["\<\"Siet\:030c N1: \"\>", TextForm]], "InlineText",
-        ExpressionUUID->"63a9afa2-e105-4965-b4f7-6376326fca1a"],
+        ExpressionUUID->"6460f669-6523-4680-ac8f-e8a29239000c"],
        Text["Siet\:030c N1: "]],
       StripOnInput->False], 
      PaneBox[
       DynamicBox[ToBoxes[
         Part[$CellContext`zasobnik, 4], StandardForm],
-       ImageSizeCache->{16., {1., 9.}}]], "", ""},
+       ImageSizeCache->{8., {1., 9.}}]], "", ""},
     {
      ItemBox[
       InterpretationBox[Cell[BoxData[
         FormBox["\<\"Siet\:030c N2: \"\>", TextForm]], "InlineText",
-        ExpressionUUID->"d4615350-3a64-422c-b59b-508b63cf63ab"],
+        ExpressionUUID->"49667adb-14bb-491e-ae26-c0295527d5ce"],
        Text["Siet\:030c N2: "]],
       StripOnInput->False], 
      PaneBox[
@@ -1488,7 +1490,7 @@ plytvalo c\:030co najmenej ak podsiete obsahuju\:0301: \"\>", TextForm]],
      ItemBox[
       InterpretationBox[Cell[BoxData[
         FormBox["\<\"Siet\:030c N3: \"\>", TextForm]], "InlineText",
-        ExpressionUUID->"a7333ccb-d477-4893-baaa-1c8dad35f159"],
+        ExpressionUUID->"902f59b5-c42e-4062-80f1-5f73efe48359"],
        Text["Siet\:030c N3: "]],
       StripOnInput->False], 
      PaneBox[
@@ -1499,7 +1501,7 @@ plytvalo c\:030co najmenej ak podsiete obsahuju\:0301: \"\>", TextForm]],
      ItemBox[
       InterpretationBox[Cell[BoxData[
         FormBox["\<\"Siet\:030c N4: \"\>", TextForm]], "InlineText",
-        ExpressionUUID->"82439f51-0738-44db-b40d-f71169a489c9"],
+        ExpressionUUID->"e3e4e165-65a6-4f66-b12b-e10145e7c8f2"],
        Text["Siet\:030c N4: "]],
       StripOnInput->False], 
      PaneBox[
@@ -1514,7 +1516,7 @@ plytvalo c\:030co najmenej ak podsiete obsahuju\:0301: \"\>", TextForm]],
 \:030cs\:030ciu IP adresu na se\:0301riovom rozhrani\:0301 ako R2. Adresy \
 ethernetovy\:0301ch rozhrani\:0301 smerovac\:030cov su\:0301 vz\:030cdy prve\
 \:0301 platne\:0301 v danej podsieti.\"\>", TextForm]], "InlineText",
-        ExpressionUUID->"06d8118b-eccc-4a7a-a832-6e6c87e83233"],
+        ExpressionUUID->"54ac9304-2c74-47a1-ae95-468ebc6e3a1c"],
        Text[
        "Adresy se\:0301riovy\:0301ch rozhrani\:0301 su\:0301 vz\:030cdy prve\
 \:0301 dve platne\:0301 adresy v danej podsieti. R1 ma\:0301 \
@@ -1525,74 +1527,74 @@ ethernetovy\:0301ch rozhrani\:0301 smerovac\:030cov su\:0301 vz\:030cdy prve\
     {
      InterpretationBox[Cell[BoxData[
        FormBox["\<\"Adresa PC1 je\"\>", TextForm]], "InlineText",
-       ExpressionUUID->"4ac6ad06-be1d-4923-bb37-89cf2c0ef29f"],
+       ExpressionUUID->"5b4ec8bc-35c0-4df1-b3be-b8595fa9c628"],
       Text["Adresa PC1 je"]], 
      InterpretationBox[Cell[BoxData[
        FormBox[
         DynamicBox[ToBoxes[
           Part[$CellContext`zasobnik, 8], StandardForm],
          ImageSizeCache->{7., {0., 10.}}], TextForm]], "InlineText",
-       ExpressionUUID->"a1fd76f8-c2f1-4533-a574-e23f8a48b2ac"],
+       ExpressionUUID->"77046f8c-bd68-438f-a2df-85e58cc57e74"],
       Text[
        Dynamic[
         Part[$CellContext`zasobnik, 8]]]], 
      InterpretationBox[Cell[BoxData[
        FormBox["\<\"platna\:0301 adresa v danej podsieti.\"\>", TextForm]], 
-       "InlineText",ExpressionUUID->"d5e98254-7a2a-43c0-92a8-bb6f7f6220a2"],
+       "InlineText",ExpressionUUID->"1f271b0e-a7e9-4cb0-bcc2-4d48860c1ea4"],
       Text["platna\:0301 adresa v danej podsieti."]], "\<\"\"\>"},
     {
      InterpretationBox[Cell[BoxData[
        FormBox["\<\"Adresa PC2 je\"\>", TextForm]], "InlineText",
-       ExpressionUUID->"ff75e133-2baa-47b0-848a-855087c09223"],
+       ExpressionUUID->"52b9f219-a7f9-44cd-95ff-3aa8bb87cb83"],
       Text["Adresa PC2 je"]], 
      InterpretationBox[Cell[BoxData[
        FormBox[
         DynamicBox[ToBoxes[
           Part[$CellContext`zasobnik, 9], StandardForm],
          ImageSizeCache->{7., {1., 10.}}], TextForm]], "InlineText",
-       ExpressionUUID->"604d2c84-97f3-44ee-bcc0-c6679b20ef07"],
+       ExpressionUUID->"018cd643-c3cd-49ff-93da-460112ed20ba"],
       Text[
        Dynamic[
         Part[$CellContext`zasobnik, 9]]]], 
      InterpretationBox[Cell[BoxData[
        FormBox["\<\"platna\:0301 adresa v danej podsieti.\"\>", TextForm]], 
-       "InlineText",ExpressionUUID->"38dcce64-0d9c-4e7d-ba9d-7f13d45c7f3e"],
+       "InlineText",ExpressionUUID->"c8599d0c-28e7-4549-9b8f-ecc311d0852b"],
       Text["platna\:0301 adresa v danej podsieti."]], "\<\"\"\>"},
     {
      InterpretationBox[Cell[BoxData[
        FormBox["\<\"Adresa PC3 je\"\>", TextForm]], "InlineText",
-       ExpressionUUID->"f9ae43ba-0878-401c-b372-e6ffc1496b71"],
+       ExpressionUUID->"40fd002e-310b-410a-9168-656ee5641c64"],
       Text["Adresa PC3 je"]], 
      InterpretationBox[Cell[BoxData[
        FormBox[
         DynamicBox[ToBoxes[
           Part[$CellContext`zasobnik, 10], StandardForm],
-         ImageSizeCache->{22., {1., 10.}}], TextForm]], "InlineText",
-       ExpressionUUID->"08c606e5-c232-4223-be1b-889b22da6093"],
+         ImageSizeCache->{22., {0., 10.}}], TextForm]], "InlineText",
+       ExpressionUUID->"f11de8e2-c810-4818-97ea-aca4c70bde0e"],
       Text[
        Dynamic[
         Part[$CellContext`zasobnik, 10]]]], 
      InterpretationBox[Cell[BoxData[
        FormBox["\<\"platna\:0301 adresa v danej podsieti.\"\>", TextForm]], 
-       "InlineText",ExpressionUUID->"bf714a0d-03fc-4403-82b4-e6790deca068"],
+       "InlineText",ExpressionUUID->"b8fc5a1a-a830-4728-87a1-ebce10a0f010"],
       Text["platna\:0301 adresa v danej podsieti."]], "\<\"\"\>"},
     {
      InterpretationBox[Cell[BoxData[
        FormBox["\<\"Adresa PC4 je\"\>", TextForm]], "InlineText",
-       ExpressionUUID->"f3eabdf5-267d-4061-9c28-3fe24a9a2a30"],
+       ExpressionUUID->"bea3b5db-5405-4523-94e8-58a433b6f1c4"],
       Text["Adresa PC4 je"]], 
      InterpretationBox[Cell[BoxData[
        FormBox[
         DynamicBox[ToBoxes[
           Part[$CellContext`zasobnik, 11], StandardForm],
          ImageSizeCache->{22., {1., 10.}}], TextForm]], "InlineText",
-       ExpressionUUID->"09baf589-33d2-4acc-9ff5-518d99117670"],
+       ExpressionUUID->"bc19835e-f1e7-4aa4-a17f-eba5961559cb"],
       Text[
        Dynamic[
         Part[$CellContext`zasobnik, 11]]]], 
      InterpretationBox[Cell[BoxData[
        FormBox["\<\"platna\:0301 adresa v danej podsieti.\"\>", TextForm]], 
-       "InlineText",ExpressionUUID->"87b8ccf6-13f9-4d7d-8420-9cc89c05e51a"],
+       "InlineText",ExpressionUUID->"e7cb579e-1992-4429-855e-3ddf9f10636f"],
       Text["platna\:0301 adresa v danej podsieti."]], "\<\"\"\>"},
     {
      ItemBox[
@@ -1604,7 +1606,7 @@ se\:0301riove\:0301 prepojenie. Nakonfigurujte poz\:030cadovanu\:0301 \
 adresovaciu sche\:0301mu a staticke\:0301 smerovanie tak, aby bola \
 umoz\:030cnena\:0301 komunika\:0301cia vs\:030cetky\:0301ch koncovy\:0301ch \
 uzlov. \"\>", TextForm]], "InlineText",ExpressionUUID->
-        "a40584a0-eba6-4ecf-a848-f4cd132b750f"],
+        "3f8ce31d-ee0d-4dc7-b64b-a839ba3b53ba"],
        Text[
        "V na\:0301stroji Packet Tracer zostavte topolo\:0301giu siete podl\
 \:030ca obra\:0301zka. Vs\:030cetky prepojenia, okrem prepojenia medzi \
@@ -1642,7 +1644,7 @@ komunika\:0301cia vs\:030cetky\:0301ch koncovy\:0301ch uzlov. "]],
      PaneBox[
       DynamicBox[ToBoxes[
         Part[$CellContext`zasobnik, 12], StandardForm],
-       ImageSizeCache->{1711., {231.1328125, 236.8671875}}]], "", "", ""}
+       ImageSizeCache->{1574., {231.1328125, 236.8671875}}]], "", "", ""}
    },
    AutoDelete->False,
    BaseStyle->(ImageSizeMultipliers -> 2),
@@ -1651,12 +1653,17 @@ komunika\:0301cia vs\:030cetky\:0301ch koncovy\:0301ch uzlov. "]],
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{2}}}],
   "Grid"]], "Output",
- CellChangeTimes->{3.849183528156197*^9, 3.84918364835929*^9},
- CellLabel->"Out[19]=",ExpressionUUID->"2c78c632-010b-4c10-9ae4-bccefa05bae3"]
+ CellChangeTimes->{
+  3.849183528156197*^9, 3.84918364835929*^9, 3.849188367473171*^9, 
+   3.849188568251483*^9, 3.849188689581254*^9, 3.849188786208212*^9, {
+   3.849188836252358*^9, 3.849188856652349*^9}, {3.8491889002699757`*^9, 
+   3.849188917934561*^9}},
+ CellLabel->
+  "Out[114]=",ExpressionUUID->"af7ded34-bdcf-4b71-8f78-8ffe23629176"]
 }, Open  ]]
 },
-WindowSize->{Full, Full},
-WindowMargins->{{316, Automatic}, {Automatic, 50}},
+WindowSize->{2560, 1472},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
 TaggingRules->Association["TryRealOnly" -> False],
 FrontEndVersion->"12.3 for Linux x86 (64-bit) (July 9, 2021)",
 StyleDefinitions->"Default.nb",
@@ -1674,8 +1681,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 60800, 1379, 3683, "Input",ExpressionUUID->"13b80300-a277-433e-a56d-d28d4a27b5c1"],
-Cell[61383, 1403, 10631, 251, 1518, "Output",ExpressionUUID->"2c78c632-010b-4c10-9ae4-bccefa05bae3"]
+Cell[580, 22, 60905, 1381, 3683, "Input",ExpressionUUID->"13b80300-a277-433e-a56d-d28d4a27b5c1"],
+Cell[61488, 1405, 10831, 256, 1518, "Output",ExpressionUUID->"af7ded34-bdcf-4b71-8f78-8ffe23629176"]
 }, Open  ]]
 }
 ]
